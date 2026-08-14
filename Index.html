@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f1f4f8;
+  color:#172033;
+}
+
+.header{
+  background:#14233d;
+  color:#fff;
+  padding:24px;
+}
+
+.header h1{
+  margin:0;
+  font-size:24px;
+}
+
+.header p{
+  margin:7px 0 0;
+  color:#bdc8d8;
+}
+
+.container{
+  max-width:850px;
+  margin:auto;
+  padding:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:15px;
+  padding:25px;
+  margin-bottom:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.card h2{
+  margin-top:0;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 0;
+  border-bottom:1px solid #e5e8ed;
+}
+
+.row span{
+  color:#687386;
+}
+
+.row strong{
+  text-align:right;
+}
+
+.status{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#fff4d6;
+  color:#805d00;
+  font-size:13px;
+}
+
+.notice{
+  background:#f5f7fa;
+  padding:15px;
+  border-radius:10px;
+  color:#606b7a;
+  font-size:13px;
+  line-height:1.5;
+}
+
+@media(max-width:600px){
+  .container{padding:15px}
+  .row{gap:10px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Payment Record</h1>
+  <p>Customer Transaction Information</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Customer Details</h2>
+
+<div class="row">
+  <span>Customer Name</span>
+  <strong>Ayesha</strong>
+</div>
+
+<div class="row">
+  <span>Account No.</span>
+  <strong>••••6785</strong>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Payment Details</h2>
+
+<div class="row">
+  <span>USD Amount</span>
+  <strong>$500</strong>
+</div>
+
+<div class="row">
+  <span>INR Amount</span>
+  <strong>₹40000</strong>
+</div>
+
+<div class="row">
+  <span>GST</span>
+  <strong>₹2000</strong>
+</div>
+
+<div class="row">
+  <span>Exchange Currency Fee</span>
+  <strong>₹2000</strong>
+</div>
+
+<div class="row">
+  <span>Status</span>
+  <strong><span class="status">Pending Verification</span></strong>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Verification Notice</h2>
+
+<div class="notice">
+This page displays a payment record only. Actual payment receipt or
+transfer should be confirmed through the relevant bank account or
+official bank statement.
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
