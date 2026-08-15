@@ -1,207 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Dashboard </title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#f3f6f8;
-  color:#263746;
+  background:#f1f4f8;
+  color:#172033;
 }
+
 .header{
-  background:#fff;
-  padding:22px;
-  text-align:center;
-  border-bottom:1px solid #ddd;
+  background:#14233d;
+  color:#fff;
+  padding:24px;
 }
-.logo{
-  color:#0875ad;
+
+.header h1{
+  margin:0;
   font-size:24px;
-  font-weight:bold;
 }
-.demo{
-  display:inline-block;
-  margin-top:8px;
-  background:#fff1c7;
-  color:#805900;
-  padding:6px 12px;
-  border-radius:15px;
-  font-size:10px;
-  font-weight:bold;
+
+.header p{
+  margin:7px 0 0;
+  color:#bdc8d8;
 }
-.nav{
-  background:#0875ad;
-  display:flex;
-  overflow:auto;
-}
-.nav div{
-  color:white;
-  padding:14px 18px;
-  white-space:nowrap;
-  font-size:13px;
-}
+
 .container{
-  max-width:1000px;
-  margin:22px auto;
-  padding:0 15px;
+  max-width:850px;
+  margin:auto;
+  padding:25px;
 }
-.notice{
-  background:#e5f3fa;
-  border-left:5px solid #0875ad;
-  padding:13px;
-  font-size:12px;
+
+.card{
+  background:#fff;
+  border-radius:15px;
+  padding:25px;
   margin-bottom:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
-.panel{
-  background:white;
-  border:1px solid #d4dce1;
-  margin-bottom:18px;
-  box-shadow:0 1px 3px #0001;
+
+.card h2{
+  margin-top:0;
 }
-.title{
-  background:#edf4f7;
-  padding:14px;
-  color:#24536c;
-  font-weight:bold;
-  border-bottom:1px solid #d4dce1;
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 0;
+  border-bottom:1px solid #e5e8ed;
 }
-table{
-  width:100%;
-  border-collapse:collapse;
+
+.row span{
+  color:#687386;
 }
-th{
-  background:#f7f9fa;
-  color:#596873;
-  text-align:left;
-  padding:13px;
-  font-size:12px;
+
+.row strong{
+  text-align:right;
 }
-td{
-  padding:14px;
-  border-top:1px solid #e5e9ec;
+
+.status{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#fff4d6;
+  color:#805d00;
   font-size:13px;
 }
-.amount{
-  font-weight:bold;
-  color:#19723e;
+
+.notice{
+  background:#f5f7fa;
+  padding:15px;
+  border-radius:10px;
+  color:#606b7a;
+  font-size:13px;
+  line-height:1.5;
 }
-.status{
-  color:#19723e;
-  font-weight:bold;
-}
-footer{
-  text-align:center;
-  color:#777;
-  font-size:11px;
-  padding:20px;
-}
-@media(max-width:650px){
-  .container{padding:0 9px}
-  .panel{overflow-x:auto}
-  table{min-width:700px}
+
+@media(max-width:600px){
+  .container{
+    padding:15px;
+  }
+
+  .row{
+    gap:10px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo">SUPPORT DASHBOARD</div>
-  <div class= REAL FINANCIAL SERVICE</div>
-</header>
+<div class="header">
+  <h1>SBI Payment Record</h1>
+  <p>Customer Transaction Information</p>
+</div>
 
-<nav class="nav">
-  <div>Customer Details</div>
-  <div>Payment Summary</div>
-  <div>Currency Details</div>
-  <div>Status</div>
-</nav>
+<div class="container">
 
-<main class="container">
+  <div class="card">
+    <h2>Customer Details</h2>
 
+    <div class="row">
+      <span>Customer Name</span>
+      <strong>Customer Name</strong>
+    </div>
 
-<section class="panel">
+    <div class="row">
+      <span>Account No.</span>
+      <strong>•••• 0000</strong>
+    </div>
+  </div>
 
-<div class="title">Customer Details</div>
+  <div class="card">
+    <h2>Payment Details</h2>
 
-<table>
-<tr>
-<th>Customer Name</th>
-<th>Account No.</th>
-<th>Mobile No.</th>
-</tr>
+    <div class="row">
+      <span>USD Amount</span>
+      <strong>$0.00</strong>
+    </div>
 
-<tr>
-<td>Customer</td>
-<td>XXXX XXXX 4821</td>
-<td>+91 XXXXX XXXXX</td>
-</tr>
-</table>
+    <div class="row">
+      <span>INR Amount</span>
+      <strong>₹0.00</strong>
+    </div>
 
-</section>
+    <div class="row">
+      <span>GST</span>
+      <strong>₹0.00</strong>
+    </div>
 
+    <div class="row">
+      <span>Exchange Currency Fee</span>
+      <strong>₹0.00</strong>
+    </div>
 
-<section class="panel">
+    <div class="row">
+      <span>Status</span>
+      <strong>
+        <span class="status">Pending Verification</span>
+      </strong>
+    </div>
+  </div>
 
-<div class="title">Currency & Payment Summary</div>
+  <div class="card">
+    <h2>Verification</h2>
 
-<table>
+    
+  </div>
 
-<tr>
-<th>USD Amount</th>
-<th>INR Amount</th>
-<th>GST</th>
-<th>Exchange Currency Fee</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td class="amount">$1,000.00</td>
-<td class="amount">₹83,000.00</td>
-<td>GST</td>
-<td>Fee</td>
-<td class="status"></td>
-</tr>
-
-</table>
-
-</section>
-
-
-<section class="panel">
-
-<div class="title">Transaction Summary</div>
-
-<table>
-
-<tr>
-<th>Customer</th>
-<th>Currency</th>
-<th>Amount</th>
-<th>Service</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>Customer</td>
-<td>USD → INR</td>
-<td class="amount">$1,000.00</td>
-<td>Currency Exchange</td>
-<td class="status">Sample</td>
-</tr>
-
-</table>
-
-</section>
-
-</main>
-
-
+</div>
 
 </body>
 </html>
