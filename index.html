@@ -27,6 +27,14 @@ body{
   color:#bdc8d8;
 }
 
+.demo{
+  background:#ffe8e8;
+  color:#a00000;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+}
+
 .container{
   max-width:850px;
   margin:auto;
@@ -70,15 +78,6 @@ body{
   font-size:13px;
 }
 
-.notice{
-  background:#f5f7fa;
-  padding:15px;
-  border-radius:10px;
-  color:#606b7a;
-  font-size:13px;
-  line-height:1.5;
-}
-
 @media(max-width:600px){
   .container{padding:15px}
   .row{gap:10px}
@@ -89,64 +88,90 @@ body{
 <body>
 
 <div class="header">
-  <h1>SBI Banking Payment Record</h1>
-  <p>Customer Transaction Information</p>
+  <h1>Payment Record Dashboard</h1>
+  <p>Transaction Information — DEMO</p>
+</div>
+
+<div class="demo">
+  DEMO / SAMPLE — NOT AN OFFICIAL BANK DOCUMENT
 </div>
 
 <div class="container">
 
 <div class="card">
-
-<h2>Customer Details</h2>
+<h2>Transaction Details</h2>
 
 <div class="row">
-  <span>Customer Name</span>
-  <strong>SUNIL CHATRASINGH</strong>
+  <span>Date</span>
+  <strong>15 August 2026</strong>
 </div>
 
 <div class="row">
-  <span>Account No.</span>
-  <strong>..........16195</strong>
+  <span>Customer Name</span>
+  <strong>Ayesha Ali</strong>
 </div>
 
 </div>
 
 <div class="card">
+<h2>Sending Account</h2>
 
+<div class="row">
+  <span>Sending Bank</span>
+  <strong>SBI Bank</strong>
+</div>
+
+<div class="row">
+  <span>Sending Account No.</span>
+  <strong>•••• 4500</strong>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Receiving Account</h2>
+
+<div class="row">
+  <span>Receiving Bank</span>
+  <strong>abc bank</strong>
+</div>
+
+<div class="row">
+  <span>Receiving Account No.</span>
+  <strong>•••• 7821</strong>
+</div>
+
+</div>
+
+<div class="card">
 <h2>Payment Details</h2>
 
 <div class="row">
   <span>USD Amount</span>
-  <strong>$5238</strong>
+  <strong>$500</strong>
 </div>
 
 <div class="row">
   <span>INR Amount</span>
-  <strong>₹500000</strong>
+  <strong>₹250000</strong>
 </div>
 
 <div class="row">
   <span>GST</span>
-  <strong>₹10000</strong>
+  <strong>₹3000</strong>
 </div>
 
 <div class="row">
   <span>Exchange Currency Fee</span>
-  <strong>₹5000</strong>
+  <strong>₹8000</strong>
 </div>
 
 <div class="row">
   <span>Status</span>
-  <strong><span class="status">Pending Verification</span></strong>
+  <strong>
+    <span class="status">Pending Verification</span>
+  </strong>
 </div>
-
-</div>
-
-<div class="card">
-
-<h2>Verification Notice</h2>
-
-
 
 </div>
 
