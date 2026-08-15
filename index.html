@@ -7,37 +7,38 @@
 body{
   margin:0;
   font-family:Arial,sans-serif;
-  background:#eef2f7;
+  background:#f1f4f8;
   color:#172033;
 }
 
 .header{
   background:#14233d;
-  color:white;
-  padding:24px 28px;
+  color:#fff;
+  padding:24px;
 }
 
 .header h1{
   margin:0;
-  font-size:25px;
+  font-size:24px;
 }
 
 .header p{
-  margin:6px 0 0;
-  color:#b9c5d6;
+  margin:7px 0 0;
+  color:#bdc8d8;
 }
 
 .container{
-  max-width:800px;
+  max-width:850px;
   margin:auto;
   padding:25px;
 }
 
 .card{
-  background:white;
-  padding:25px;
+  background:#fff;
   border-radius:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  padding:25px;
+  margin-bottom:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .card h2{
@@ -60,23 +61,27 @@ body{
   text-align:right;
 }
 
-.notice{
-  margin-top:22px;
-  padding:14px;
-  background:#f4f6f9;
-  border-radius:9px;
-  color:#606b7a;
+.status{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:20px;
+  background:#fff4d6;
+  color:#805d00;
   font-size:13px;
 }
 
-@media(max-width:600px){
-  .container{
-    padding:15px;
-  }
+.notice{
+  background:#f5f7fa;
+  padding:15px;
+  border-radius:10px;
+  color:#606b7a;
+  font-size:13px;
+  line-height:1.5;
+}
 
-  .row{
-    gap:12px;
-  }
+@media(max-width:600px){
+  .container{padding:15px}
+  .row{gap:10px}
 }
 </style>
 </head>
@@ -84,15 +89,15 @@ body{
 <body>
 
 <div class="header">
-  <h1>SBI Banking Payment Record Dashboard</h1>
-  <p>Independent Transaction Record</p>
+  <h1>SBI Banking Payment Record</h1>
+  <p>Customer Transaction Information</p>
 </div>
 
 <div class="container">
 
 <div class="card">
 
-<h2>Payment Details</h2>
+<h2>Customer Details</h2>
 
 <div class="row">
   <span>Customer Name</span>
@@ -101,8 +106,14 @@ body{
 
 <div class="row">
   <span>Account No.</span>
-  <strong>—</strong>
+  <strong>•••• 0000</strong>
 </div>
+
+</div>
+
+<div class="card">
+
+<h2>Payment Details</h2>
 
 <div class="row">
   <span>USD Amount</span>
@@ -126,8 +137,15 @@ body{
 
 <div class="row">
   <span>Status</span>
-  <strong>Pending Verification</strong>
+  <strong><span class="status">Pending Verification</span></strong>
 </div>
+
+</div>
+
+<div class="card">
+
+<h2>Verification Notice</h2>
+
 
 
 </div>
