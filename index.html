@@ -1,508 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Helping Hands Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Dashboard </title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f3f6f8;color:#263746}
-
-/* WELCOME */
-#welcome{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-background:linear-gradient(135deg,#eaf7fb,#fff)
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f6f8;
+  color:#263746;
 }
-
-.welcome-box{
-max-width:600px;
-width:100%;
-background:white;
-padding:35px 25px;
-text-align:center;
-border-radius:14px;
-box-shadow:0 5px 25px #0002
-}
-
-.icon{font-size:50px}
-
-h1{color:#0875ad;margin:12px 0}
-
-.subtitle{
-font-size:18px;
-font-weight:bold;
-color:#19723e
-}
-
-.welcome-box p{
-line-height:1.7;
-color:#596873
-}
-
-.values{
-margin:20px 0;
-display:flex;
-justify-content:center;
-gap:8px;
-flex-wrap:wrap
-}
-
-.values span{
-background:#edf6f9;
-padding:8px 12px;
-border-radius:20px;
-font-size:13px
-}
-
-.enter{
-background:#0875ad;
-color:white;
-border:0;
-padding:13px 28px;
-border-radius:5px;
-font-size:15px;
-cursor:pointer
-}
-
-.enter:hover{background:#075d8b}
-
-.note{
-margin-top:18px;
-font-size:11px;
-color:#777
-}
-
-/* DASHBOARD */
-#dashboard{display:none}
-
 .header{
-height:85px;
-background:white;
-border-bottom:1px solid #ddd;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative
+  background:#fff;
+  padding:22px;
+  text-align:center;
+  border-bottom:1px solid #ddd;
 }
-
 .logo{
-text-align:center;
-font-size:24px;
-font-weight:bold;
-color:#116c9f
+  color:#0875ad;
+  font-size:24px;
+  font-weight:bold;
 }
-
-.logo small{
-display:block;
-font-size:9px;
-letter-spacing:3px;
-color:#777
-}
-
 .demo{
-position:absolute;
-right:15px;
-top:15px;
-background:#fff1c7;
-color:#805900;
-padding:7px 10px;
-border-radius:15px;
-font-size:9px;
-font-weight:bold
+  display:inline-block;
+  margin-top:8px;
+  background:#fff1c7;
+  color:#805900;
+  padding:6px 12px;
+  border-radius:15px;
+  font-size:10px;
+  font-weight:bold;
 }
-
 .nav{
-background:#0875ad;
-display:flex;
-overflow:auto
+  background:#0875ad;
+  display:flex;
+  overflow:auto;
 }
-
 .nav div{
-color:white;
-padding:14px 18px;
-white-space:nowrap;
-font-size:13px
+  color:white;
+  padding:14px 18px;
+  white-space:nowrap;
+  font-size:13px;
 }
-
-.nav .active{background:#075d8b}
-
 .container{
-max-width:1050px;
-margin:20px auto;
-padding:0 12px
+  max-width:1000px;
+  margin:22px auto;
+  padding:0 15px;
 }
-
 .notice{
-background:#e5f3fa;
-border-left:5px solid #0875ad;
-padding:12px;
-font-size:12px;
-margin-bottom:18px
+  background:#e5f3fa;
+  border-left:5px solid #0875ad;
+  padding:13px;
+  font-size:12px;
+  margin-bottom:18px;
 }
-
-.crumb{
-background:#075e91;
-color:white;
-padding:12px;
-font-size:13px
-}
-
 .panel{
-background:white;
-border:1px solid #d0d8de;
-margin-bottom:18px;
-box-shadow:0 1px 2px #0001
+  background:white;
+  border:1px solid #d4dce1;
+  margin-bottom:18px;
+  box-shadow:0 1px 3px #0001;
 }
-
 .title{
-background:#edf4f7;
-padding:13px;
-border-bottom:1px solid #d0d8de;
-font-weight:bold;
-color:#24536c
+  background:#edf4f7;
+  padding:14px;
+  color:#24536c;
+  font-weight:bold;
+  border-bottom:1px solid #d4dce1;
 }
-
-.summary{
-display:grid;
-grid-template-columns:1fr 1fr 1fr
-}
-
-.info{
-padding:18px;
-border-right:1px solid #ddd
-}
-
-.info label{
-display:block;
-font-size:11px;
-color:#697780;
-margin-bottom:7px
-}
-
-.info strong{
-font-size:18px;
-color:#19723e
-}
-
 table{
-width:100%;
-border-collapse:collapse
+  width:100%;
+  border-collapse:collapse;
 }
-
 th{
-background:#f7f9fa;
-padding:12px;
-text-align:left;
-font-size:12px;
-color:#596873
+  background:#f7f9fa;
+  color:#596873;
+  text-align:left;
+  padding:13px;
+  font-size:12px;
 }
-
 td{
-padding:12px;
-border-top:1px solid #e5e9ec;
-font-size:13px
+  padding:14px;
+  border-top:1px solid #e5e9ec;
+  font-size:13px;
 }
-
-.green{
-color:#19723e;
-font-weight:bold
+.amount{
+  font-weight:bold;
+  color:#19723e;
 }
-
-.buttons{
-padding:14px
+.status{
+  color:#19723e;
+  font-weight:bold;
 }
-
-.buttons button{
-background:#0875ad;
-border:0;
-color:white;
-padding:9px 14px;
-margin-right:6px;
-border-radius:3px
-}
-
 footer{
-text-align:center;
-font-size:11px;
-color:#777;
-padding:20px
+  text-align:center;
+  color:#777;
+  font-size:11px;
+  padding:20px;
 }
-
-@media(max-width:700px){
-
-.header{
-height:95px;
-padding-top:25px
-}
-
-.logo{font-size:21px}
-
-.demo{
-top:7px;
-right:7px
-}
-
-.summary{
-grid-template-columns:1fr
-}
-
-.info{
-border-right:0;
-border-bottom:1px solid #ddd
-}
-
-.panel{
-overflow-x:auto
-}
-
-table{
-min-width:650px
-}
-
-.container{
-padding:0 8px
-}
-
+@media(max-width:650px){
+  .container{padding:0 9px}
+  .panel{overflow-x:auto}
+  table{min-width:700px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- WELCOME PAGE -->
-
-<div id="welcome">
-
-<div class="welcome-box">
-
-<div class="icon">🤝</div>
-
-<h1>Hamara Maqsad</h1>
-
-<div class="subtitle">
-Zaruratmandon tak madad, insaniyat ke saath
-</div>
-
-<p>
-Hamari koshish hai ke mushkil halaat ka saamna
-karne wale logon aur parivaron tak support ki
-information aur resources pohanchaye ja saken.
-</p>
-
-<p>
-Hamari soch insaniyat, khidmat aur umeed ko
-badhava dena hai.
-</p>
-
-<div class="values">
-<span>❤️ Insaniyat</span>
-<span>🤝 Khidmat</span>
-<span>🌱 Umeed</span>
-</div>
-
-<button class="enter" onclick="openDashboard()">
-Aage Badhein →
-</button>
-
-<div class="note">
-DEMO WEBSITE — Ye kisi real charity ya financial
-assistance organization se affiliated nahi hai.
-</div>
-
-</div>
-
-</div>
-
-
-<!-- DASHBOARD -->
-
-<div id="dashboard">
-
 <header class="header">
-
-<div class="logo">
-BANKING DEMO
-<small>ONLINE PORTAL</small>
-</div>
-
-<div class="demo">
-DEMO ONLY
-</div>
-
+  <div class="logo">SUPPORT DASHBOARD</div>
+  <div class= REAL FINANCIAL SERVICE</div>
 </header>
 
-
 <nav class="nav">
-
-<div class="active">My Accounts</div>
-<div>Payments / Transfers</div>
-<div>Bill Payments</div>
-<div>Deposits</div>
-<div>Statements</div>
-<div>Services</div>
-
+  <div>Customer Details</div>
+  <div>Payment Summary</div>
+  <div>Currency Details</div>
+  <div>Status</div>
 </nav>
-
 
 <main class="container">
 
-<div class="notice">
-<b>Demo website:</b>
-This is a visual banking portal for learning and design purposes.
-It is not connected to any real bank and does not collect passwords,
-PINs, OTPs, card details or real financial information.
-</div>
-
-<div class="crumb">
-Home › My Accounts › Account Summary
-</div>
-
 
 <section class="panel">
 
-<div class="title">
-Account Summary
-</div>
-
-<div class="summary">
-
-<div class="info">
-<label>Account Number</label>
-<strong style="color:#263746">
-XXXX XXXX 4821
-</strong>
-</div>
-
-<div class="info">
-<label>Account Name</label>
-<strong style="color:#263746">
-Demo Account
-</strong>
-</div>
-
-<div class="info">
-<label>Available Balance</label>
-<strong>
-₹ 5,00,000.00
-</strong>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="panel">
-
-<div class="title">
-Transaction Accounts
-</div>
+<div class="title">Customer Details</div>
 
 <table>
-
 <tr>
-<th>Account Number</th>
-<th>Account Type</th>
-<th>Branch</th>
-<th>Available Balance</th>
+<th>Customer Name</th>
+<th>Account No.</th>
+<th>Mobile No.</th>
 </tr>
 
 <tr>
+<td>Customer</td>
 <td>XXXX XXXX 4821</td>
-<td>Demo Savings</td>
-<td>Demo Branch</td>
-<td class="green">
-₹ 5,00,000.00
-</td>
+<td>+91 XXXXX XXXXX</td>
 </tr>
-
 </table>
-
-<div class="buttons">
-
-<button onclick="alert('Demo only — no real transaction.')">
-View Transactions
-</button>
-
-<button onclick="alert('Demo only — no real transfer.')">
-Payments / Transfers
-</button>
-
-</div>
 
 </section>
 
 
 <section class="panel">
 
-<div class="title">
-Recent Transactions
-</div>
+<div class="title">Currency & Payment Summary</div>
 
 <table>
 
 <tr>
-<th>Date</th>
-<th>Description</th>
-<th>Type</th>
+<th>USD Amount</th>
+<th>INR Amount</th>
+<th>GST</th>
+<th>Exchange Currency Fee</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td class="amount">$1,000.00</td>
+<td class="amount">₹83,000.00</td>
+<td>GST</td>
+<td>Fee</td>
+<td class="status"></td>
+</tr>
+
+</table>
+
+</section>
+
+
+<section class="panel">
+
+<div class="title">Transaction Summary</div>
+
+<table>
+
+<tr>
+<th>Customer</th>
+<th>Currency</th>
 <th>Amount</th>
+<th>Service</th>
 <th>Status</th>
 </tr>
 
 <tr>
-<td>15 Aug 2026</td>
-<td>Demo Credit</td>
-<td>Credit</td>
-<td class="green">₹ 25,000</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>13 Aug 2026</td>
-<td>Demo Payment</td>
-<td>Debit</td>
-<td>₹ 4,500</td>
-<td>Completed</td>
-</tr>
-
-<tr>
-<td>10 Aug 2026</td>
-<td>Demo Credit</td>
-<td>Credit</td>
-<td class="green">₹ 10,000</td>
-<td>Completed</td>
-</tr>
-
-</table>
-
-</section>
-
-
-<section class="panel">
-
-<div class="title">
-Deposit Accounts
-</div>
-
-<table>
-
-<tr>
-<th>Account</th>
-<th>Type</th>
-<th>Balance</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>XXXX XXXX 7712</td>
-<td>Demo Deposit</td>
-<td class="green">₹ 1,50,000</td>
-<td>Active</td>
+<td>Customer</td>
+<td>USD → INR</td>
+<td class="amount">$1,000.00</td>
+<td>Currency Exchange</td>
+<td class="status">Sample</td>
 </tr>
 
 </table>
@@ -511,26 +201,7 @@ Deposit Accounts
 
 </main>
 
-<footer>
-Banking Portal Demo • For learning and design purposes only
-</footer>
 
-</div>
-
-
-<script>
-
-function openDashboard(){
-
-document.getElementById("welcome").style.display="none";
-
-document.getElementById("dashboard").style.display="block";
-
-window.scrollTo(0,0);
-
-}
-
-</script>
 
 </body>
 </html>
