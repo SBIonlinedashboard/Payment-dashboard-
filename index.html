@@ -1,158 +1,367 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helping Hands - Demo</title>
+
 <style>
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f1f4f8;
-  color:#172033;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7f9;
+    color:#263746;
+}
+
+/* WELCOME PAGE */
+
+#welcome{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    background:linear-gradient(135deg,#eaf6fb,#f8fbfc);
+}
+
+.welcome-box{
+    width:100%;
+    max-width:650px;
+    background:white;
+    padding:40px 28px;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 5px 25px rgba(0,0,0,.10);
+}
+
+.icon{
+    font-size:55px;
+}
+
+.welcome-box h1{
+    color:#0875ad;
+    margin:15px 0 8px;
+}
+
+.subtitle{
+    color:#19723e;
+    font-size:19px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.welcome-box p{
+    line-height:1.8;
+    color:#596873;
+    font-size:15px;
+}
+
+.values{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.values span{
+    background:#edf6f9;
+    padding:9px 13px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.enter{
+    background:#0875ad;
+    color:white;
+    border:0;
+    padding:13px 28px;
+    border-radius:5px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.enter:hover{
+    background:#075d8b;
+}
+
+.demo-note{
+    margin-top:22px;
+    font-size:11px;
+    color:#777;
+}
+
+
+/* DASHBOARD */
+
+#dashboard{
+    display:none;
 }
 
 .header{
-  background:#14233d;
-  color:#fff;
-  padding:24px;
+    background:white;
+    min-height:85px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    border-bottom:1px solid #d5dce1;
 }
 
-.header h1{
-  margin:0;
-  font-size:24px;
+.logo{
+    text-align:center;
+    color:#116c9f;
+    font-size:24px;
+    font-weight:bold;
 }
 
-.header p{
-  margin:7px 0 0;
-  color:#bdc8d8;
+.logo small{
+    display:block;
+    font-size:9px;
+    letter-spacing:3px;
+    color:#777;
+}
+
+.demo{
+    position:absolute;
+    right:15px;
+    top:18px;
+    background:#fff1c7;
+    color:#805900;
+    padding:7px 10px;
+    border-radius:15px;
+    font-size:9px;
+    font-weight:bold;
+}
+
+.nav{
+    background:#0875ad;
+    display:flex;
+    overflow-x:auto;
+}
+
+.nav div{
+    color:white;
+    padding:14px 18px;
+    white-space:nowrap;
+    font-size:13px;
+}
+
+.nav .active{
+    background:#075d8b;
 }
 
 .container{
-  max-width:850px;
-  margin:auto;
-  padding:25px;
-}
-
-.card{
-  background:#fff;
-  border-radius:15px;
-  padding:25px;
-  margin-bottom:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
-}
-
-.card h2{
-  margin-top:0;
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:16px 0;
-  border-bottom:1px solid #e5e8ed;
-}
-
-.row span{
-  color:#687386;
-}
-
-.row strong{
-  text-align:right;
-}
-
-.status{
-  display:inline-block;
-  padding:7px 12px;
-  border-radius:20px;
-  background:#fff4d6;
-  color:#805d00;
-  font-size:13px;
+    max-width:1100px;
+    margin:20px auto;
+    padding:0 15px;
 }
 
 .notice{
-  background:#f5f7fa;
-  padding:15px;
-  border-radius:10px;
-  color:#606b7a;
-  font-size:13px;
-  line-height:1.5;
+    background:#e5f3fa;
+    border-left:5px solid #0875ad;
+    padding:12px 15px;
+    font-size:12px;
+    margin-bottom:18px;
 }
 
-@media(max-width:600px){
-  .container{padding:15px}
-  .row{gap:10px}
+.crumb{
+    background:#075e91;
+    color:white;
+    padding:12px 15px;
+    font-size:13px;
+}
+
+.panel{
+    background:white;
+    border:1px solid #d0d8de;
+    margin-bottom:18px;
+    box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+
+.panel-title{
+    background:#edf4f7;
+    border-bottom:1px solid #d0d8de;
+    padding:13px 15px;
+    color:#24536c;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.summary{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+
+.info{
+    padding:18px;
+    border-right:1px solid #e1e6e9;
+}
+
+.info:last-child{
+    border-right:0;
+}
+
+.info label{
+    display:block;
+    color:#697780;
+    font-size:11px;
+    margin-bottom:7px;
+}
+
+.info strong{
+    font-size:18px;
+    color:#19723e;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#f7f9fa;
+    color:#596873;
+    padding:13px;
+    text-align:left;
+    font-size:12px;
+}
+
+td{
+    padding:13px;
+    border-top:1px solid #e6eaed;
+    font-size:13px;
+}
+
+.green{
+    color:#19723e;
+    font-weight:bold;
+}
+
+.blue{
+    color:#0875ad;
+    font-weight:bold;
+}
+
+.buttons{
+    padding:14px;
+}
+
+button{
+    background:#0875ad;
+    color:white;
+    border:0;
+    padding:9px 15px;
+    border-radius:3px;
+    margin-right:6px;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    color:#77838a;
+    font-size:11px;
+    padding:20px;
+}
+
+@media(max-width:700px){
+
+    .welcome-box{
+        padding:30px 20px;
+    }
+
+    .welcome-box h1{
+        font-size:25px;
+    }
+
+    .summary{
+        grid-template-columns:1fr;
+    }
+
+    .info{
+        border-right:0;
+        border-bottom:1px solid #e1e6e9;
+    }
+
+    .info:last-child{
+        border-bottom:0;
+    }
+
+    .demo{
+        right:7px;
+        top:7px;
+    }
+
+    .header{
+        padding-top:30px;
+    }
+
+    .container{
+        padding:0 10px;
+    }
+
+    table{
+        min-width:650px;
+    }
+
+    .panel{
+        overflow-x:auto;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>SBI Payment Record</h1>
-  <p>Customer Transaction Information</p>
+
+<!-- FIRST PAGE -->
+
+<section id="welcome">
+
+<div class="welcome-box">
+
+<div class="icon">🤝</div>
+
+<h1>Hamara Maqsad</h1>
+
+<div class="subtitle">
+Zaruratmandon tak madad, insaniyat ke saath
 </div>
 
-<div class="container">
+<p>
+Hamari koshish hai ke mushkil halaat ka saamna
+karne wale logon aur parivaron tak support ki
+information aur resources pohanchaye ja saken.
+</p>
 
-<div class="card">
+<p>
+Hamari soch hai ke insaniyat, khidmat aur umeed
+ko badhava diya jaye aur logon ko zarurat ke waqt
+munasib resources tak rehnumai mil sake.
+</p>
 
-<h2>Customer Details</h2>
-
-<div class="row">
-  <span>Customer Name</span>
-  <strong>Anup Bairagy</strong>
+<div class="values">
+<span>❤️ Insaniyat</span>
+<span>🤝 Khidmat</span>
+<span>🌱 Umeed</span>
 </div>
 
-<div class="row">
-  <span>Account No.</span>
-  <strong>.......1019466</strong>
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Payment Details</h2>
-
-<div class="row">
-  <span>USD Amount</span>
-  <strong>$5238</strong>
-</div>
-
-<div class="row">
-  <span>INR Amount</span>
-  <strong>₹500000</strong>
-</div>
-
-<div class="row">
-  <span>GST</span>
-  <strong>₹8000</strong>
-</div>
-
-<div class="row">
-  <span>Exchange Currency Fee</span>
-  <strong>₹2500</strong>
-</div>
-
-<div class="row">
-  <span>Status</span>
-  <strong><span class="status">Pending Verification</span></strong>
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Verification </h2>
-
-<div>
-
+<button class="enter" onclick="openDashboard()">
+Aage Badhein →
+</button>
 
 
 </div>
 
-</div>
+</section>
 
-</body>
-</html>
+
+<!-- DASHBOARD PAGE -->
+
+<section id="dashboard">
+
+<header class="header">
+
+<div class="logo">
