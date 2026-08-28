@@ -1,8 +1,7 @@
-ui<!DOCTYPE html>
-<html>
-<head>
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -13,26 +12,30 @@ body{
 
 .header{
   background:#14233d;
-  color:#fff;
-  padding:24px;
+  color:white;
+  padding:28px 22px;
 }
 
 .header h1{
   margin:0;
-  font-size:24px;
+  font-size:29px;
+  font-weight:800;
 }
 
 .header p{
-  margin:7px 0 0;
-  color:#bdc8d8;
+  margin:9px 0 0;
+  color:#d5dce7;
+  font-size:17px;
+  font-weight:600;
 }
 
 .demo{
   background:#ffe8e8;
   color:#a00000;
   text-align:center;
-  padding:10px;
-  font-weight:bold;
+  padding:13px;
+  font-size:15px;
+  font-weight:800;
 }
 
 .container{
@@ -43,130 +46,97 @@ body{
 
 .card{
   background:#fff;
-  border-radius:15px;
-  padding:25px;
-  margin-bottom:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
+  border-radius:17px;
+  padding:27px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .card h2{
-  margin-top:0;
+  margin:0 0 10px;
+  font-size:24px;
+  font-weight:800;
 }
 
 .row{
   display:flex;
   justify-content:space-between;
-  gap:20px;
-  padding:16px 0;
-  border-bottom:1px solid #e5e8ed;
+  align-items:center;
+  gap:25px;
+  padding:19px 0;
+  border-bottom:1px solid #e1e5ea;
 }
 
-.row span{
-  color:#687386;
+.row:last-child{
+  border-bottom:none;
 }
 
-.row strong{
+.label{
+  color:#4f5d70;
+  font-size:18px;
+  font-weight:800;
+}
+
+.value{
+  color:#111827;
+  font-size:21px;
+  font-weight:800;
   text-align:right;
+}
+
+.big-value{
+  font-size:23px;
+  font-weight:900;
 }
 
 .status{
   display:inline-block;
-  padding:7px 12px;
-  border-radius:20px;
+  padding:10px 17px;
+  border-radius:24px;
   background:#fff4d6;
   color:#805d00;
-  font-size:13px;
+  font-size:16px;
+  font-weight:800;
 }
 
 @media(max-width:600px){
-  .container{padding:15px}
-  .row{gap:10px}
+
+  .container{
+    padding:14px;
+  }
+
+  .card{
+    padding:21px;
+  }
+
+  .header h1{
+    font-size:25px;
+  }
+
+  .header p{
+    font-size:16px;
+  }
+
+  .row{
+    display:block;
+    padding:18px 0;
+  }
+
+  .label{
+    display:block;
+    margin-bottom:8px;
+    font-size:18px;
+  }
+
+  .value{
+    display:block;
+    text-align:left;
+    font-size:21px;
+  }
+
+  .big-value{
+    font-size:24px;
+  }
 }
 </style>
-</head>
 
-<body>
-
-<div class="header">
-  <h1>SBI Payment Record Dashboard</h1>
-  <p>Transaction Information </p>
-</div>
-
-
-<div class="card">
-<h2>Transaction Details</h2>
-
-<div class="row">
-  <span>Date</span>
-  <strong>29 August 2026</strong>
-</div>
-
-<div class="row">
-  <span>Customer Name</span>
-  <strong,> subrata </strong>
-</div>
-
-</div>
-
-<div class="card">
-<h2>Sending Account</h2>
-
-<div class="row">
-  <span>Sending Bank</span>
-  <strong>SBI</strong>
-</div>
-
-<div class="row">
-  <span>Sending Account No.</span>
-  <strong>*******4500</strong>
-</div>
-
-</div>
-
-<div class="card">
-<h2>Receiving Account</h2>
-
-
-<div class="row">
-  <span>Receiving Account No.</span>
-  <strong> QR CODE PAYMENT</strong></strong>
-</div>
-
-</div>
-
-<div class="card">
-<h2>Payment Details</h2>
-
-<div class="row">
-  <span>USD Amount</span>
-  <strong>$530</strong>
-</div>
-
-<div class="row">
-  <span>INR Amount</span>
-  <strong>₹50000</strong>
-</div>
-
-<div class="row">
-  <span>GST</span>
-  <strong>₹3500</strong>
-</div>
-
-<div class="row">
-  <span>Exchange Currency Fee</span>
-  <strong>₹2100</strong>
-</div>
-
-<div class="row">
-  <span>Status</span>
-  <strong>
-    <span class="status">Pending Verification</span>
-  </strong>
-</div>
-
-</div>
-
-</div>
-
-</body>
-</html>
