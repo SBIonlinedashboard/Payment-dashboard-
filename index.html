@@ -11,174 +11,247 @@
   box-sizing:border-box;
 }
 
-body{
+html,body{
   margin:0;
-  background:#f4f6f9;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+body{
   font-family:Arial,Helvetica,sans-serif;
+  background:#eef2f6;
   color:#172033;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .page{
-  width:100%;
-  max-width:650px;
-  margin:25px auto;
+  width:96%;
+  max-width:700px;
+  height:94vh;
   background:#fff;
-  min-height:calc(100vh - 50px);
-  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
 /* HEADER */
 .header{
+  height:12%;
+  min-height:70px;
   background:#14233d;
   color:#fff;
-  padding:20px;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .header h1{
   margin:0;
   font-size:22px;
-  font-weight:800;
+  font-weight:900;
 }
 
 .header p{
-  margin:5px 0 0;
-  color:#cbd5e1;
-  font-size:13px;
+  margin:4px 0 0;
+  font-size:11px;
+  color:#ccd5e1;
+  font-weight:600;
+}
+
+.badge{
+  background:#263b5b;
+  border:1px solid #536680;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:9px;
+  font-weight:900;
 }
 
 /* DEMO */
 .demo{
-  text-align:center;
+  height:4%;
+  min-height:25px;
   background:#fff1f1;
   color:#a00000;
-  padding:7px;
-  font-size:10px;
-  font-weight:800;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:9px;
+  font-weight:900;
 }
 
 /* CONTENT */
 .content{
-  padding:20px;
+  height:84%;
+  padding:12px 18px;
 }
 
+/* TITLE */
 .title{
-  font-size:19px;
+  font-size:17px;
   font-weight:900;
-  margin-bottom:15px;
+  margin-bottom:8px;
 }
 
 /* STATUS */
-.status-box{
+.status{
   display:flex;
   justify-content:space-between;
   align-items:center;
   background:#fff9e8;
-  border:1px solid #f0dfaa;
-  padding:13px 15px;
-  border-radius:9px;
-  margin-bottom:17px;
+  border:1px solid #efdfae;
+  border-radius:8px;
+  padding:8px 12px;
+  margin-bottom:8px;
 }
 
-.status-label{
-  font-size:13px;
-  font-weight:700;
-  color:#6d6244;
+.status span:first-child{
+  color:#746a4c;
+  font-size:10px;
+  font-weight:800;
 }
 
 .pending{
   color:#805d00;
-  font-size:14px;
+  font-size:11px;
   font-weight:900;
 }
 
-/* ROW */
-.row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:13px 0;
-  border-bottom:1px solid #e8ebef;
+/* DATE */
+.date-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:8px;
 }
 
-.row:last-child{
-  border-bottom:none;
+.small-box{
+  background:#f7f9fb;
+  border:1px solid #e1e6eb;
+  border-radius:8px;
+  padding:8px 11px;
 }
 
 .label{
-  color:#687386;
-  font-size:13px;
-  font-weight:700;
+  display:block;
+  color:#697587;
+  font-size:9px;
+  font-weight:800;
+  margin-bottom:3px;
 }
 
 .value{
   color:#111827;
-  font-size:15px;
+  font-size:13px;
   font-weight:900;
-  text-align:right;
 }
 
-/* ACCOUNT SECTION */
-.account-section{
-  margin-top:18px;
-}
-
-.account-title{
-  font-size:14px;
-  font-weight:900;
+/* ACCOUNTS */
+.accounts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
   margin-bottom:8px;
-  color:#26364d;
 }
 
-.account-box{
-  border:1px solid #e1e5ea;
-  border-radius:9px;
-  margin-bottom:10px;
+.account{
+  border:1px solid #dfe5eb;
+  border-radius:8px;
   overflow:hidden;
 }
 
 .account-head{
-  background:#f7f8fa;
-  padding:9px 13px;
-  font-size:12px;
+  background:#f4f6f9;
+  padding:7px 10px;
+  font-size:10px;
   font-weight:900;
 }
 
 .account-body{
-  padding:0 13px;
+  padding:3px 10px;
 }
 
-/* AMOUNT */
-.amount-box{
-  margin-top:18px;
-  padding:17px;
-  border-top:1px solid #e1e5ea;
-  border-bottom:1px solid #e1e5ea;
+.account-row{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:6px;
+  padding:6px 0;
+  border-bottom:1px solid #edf0f3;
 }
 
-.amount-label{
-  font-size:13px;
-  color:#687386;
-  font-weight:700;
+.account-row:last-child{
+  border-bottom:0;
+}
+
+.account-row .label{
+  margin:0;
+  font-size:8px;
+}
+
+.account-row .value{
+  font-size:11px;
+  text-align:right;
+}
+
+/* PAYMENT */
+.payment-title{
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+
+.payment{
+  border:1px solid #dfe5eb;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.payment-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 11px;
+  border-bottom:1px solid #edf0f3;
+}
+
+.payment-row:last-child{
+  border-bottom:0;
+}
+
+.payment-row .label{
+  margin:0;
+  font-size:9px;
 }
 
 .amount{
-  font-size:24px;
+  font-size:12px;
   font-weight:900;
-  color:#111827;
+}
+
+.payment-status{
+  background:#fff4d6;
+  color:#805d00;
+  border-radius:15px;
+  padding:4px 8px;
+  font-size:8px;
+  font-weight:900;
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
-  color:#8993a1;
-  font-size:10px;
-  padding:15px;
+  margin-top:6px;
+  color:#8a94a3;
+  font-size:8px;
 }
 
-/* MOBILE */
+
+/* PHONE */
 @media(max-width:600px){
 
   body{
@@ -186,41 +259,125 @@ body{
   }
 
   .page{
-    margin:0;
-    min-height:100vh;
+    width:100%;
+    height:100vh;
+    border-radius:0;
     box-shadow:none;
   }
 
   .header{
-    padding:18px 16px;
+    height:11%;
+    padding:10px 14px;
   }
 
   .header h1{
-    font-size:20px;
-  }
-
-  .content{
-    padding:17px 15px;
-  }
-
-  .title{
     font-size:18px;
   }
 
-  .row{
-    padding:12px 0;
+  .header p{
+    font-size:9px;
+  }
+
+  .badge{
+    font-size:8px;
+    padding:5px 8px;
+  }
+
+  .demo{
+    height:4%;
+    font-size:8px;
+  }
+
+  .content{
+    height:85%;
+    padding:9px 12px;
+  }
+
+  .title{
+    font-size:15px;
+    margin-bottom:6px;
+  }
+
+  .status{
+    padding:7px 9px;
+    margin-bottom:6px;
+  }
+
+  .status span:first-child{
+    font-size:9px;
+  }
+
+  .pending{
+    font-size:10px;
+  }
+
+  .date-row{
+    gap:6px;
+    margin-bottom:6px;
+  }
+
+  .small-box{
+    padding:7px 8px;
   }
 
   .label{
-    font-size:12px;
+    font-size:8px;
   }
 
   .value{
-    font-size:14px;
+    font-size:12px;
+  }
+
+  .accounts{
+    gap:6px;
+    margin-bottom:6px;
+  }
+
+  .account-head{
+    padding:6px 8px;
+    font-size:9px;
+  }
+
+  .account-body{
+    padding:2px 8px;
+  }
+
+  .account-row{
+    padding:5px 0;
+  }
+
+  .account-row .label{
+    font-size:7px;
+  }
+
+  .account-row .value{
+    font-size:10px;
+  }
+
+  .payment-title{
+    font-size:11px;
+  }
+
+  .payment-row{
+    padding:5px 8px;
+  }
+
+  .payment-row .label{
+    font-size:8px;
   }
 
   .amount{
-    font-size:22px;
+    font-size:11px;
+  }
+
+  .payment-status{
+    font-size:7px;
+    padding:3px 6px;
+  }
+
+  .footer{
+    font-size:7px;
+    margin-top:4px;
   }
 }
 </style>
@@ -230,14 +387,22 @@ body{
 
 <div class="page">
 
+  <!-- HEADER -->
   <div class="header">
-    <h1>Transaction Details</h1>
-    <p>Payment Record — Demo</p>
+
+    <div>
+      <h1>Transaction Details</h1>
+      <p>Payment Record — Demo</p>
+    </div>
+
+    <div class="badge">SAMPLE</div>
+
   </div>
 
   <div class="demo">
     DEMO / SAMPLE — NOT AN OFFICIAL BANK RECORD
   </div>
+
 
   <div class="content">
 
@@ -245,101 +410,126 @@ body{
       Transaction Information
     </div>
 
+
     <!-- STATUS -->
-    <div class="status-box">
-      <span class="status-label">Transaction Status</span>
-      <span class="pending">PENDING</span>
+    <div class="status">
+      <span>Transaction Status</span>
+      <span class="pending">● PENDING</span>
     </div>
 
-    <!-- DATE -->
-    <div class="row">
-      <span class="label">Date</span>
-      <strong class="value">15 August 2026</strong>
-    </div>
 
-    <div class="row">
-      <span class="label">Time</span>
-      <strong class="value">03:45 PM</strong>
-    </div>
+    <!-- DATE & CUSTOMER -->
+    <div class="date-row">
 
-    <!-- SENDING -->
-    <div class="account-section">
-
-      <div class="account-title">
-        SENDING DETAILS
+      <div class="small-box">
+        <span class="label">DATE</span>
+        <strong class="value">15 August 2026</strong>
       </div>
 
-      <div class="account-box">
+      <div class="small-box">
+        <span class="label">CUSTOMER NAME</span>
+        <strong class="value">Ayesha Ali</strong>
+      </div>
+
+    </div>
+
+
+    <!-- ACCOUNTS -->
+    <div class="accounts">
+
+      <!-- SENDING -->
+      <div class="account">
 
         <div class="account-head">
-          Sending Account
+          SENDING ACCOUNT
         </div>
 
         <div class="account-body">
 
-          <div class="row">
+          <div class="account-row">
             <span class="label">Bank</span>
             <strong class="value">Sample Bank</strong>
           </div>
 
-          <div class="row">
+          <div class="account-row">
             <span class="label">Account No.</span>
             <strong class="value">•••• 4500</strong>
           </div>
 
-          <div class="row">
-            <span class="label">Account Name</span>
+          <div class="account-row">
+            <span class="label">Name</span>
             <strong class="value">Ayesha Ali</strong>
           </div>
 
         </div>
+
       </div>
 
-    </div>
 
-
-    <!-- RECEIVING -->
-    <div class="account-section">
-
-      <div class="account-title">
-        RECEIVING DETAILS
-      </div>
-
-      <div class="account-box">
+      <!-- RECEIVING -->
+      <div class="account">
 
         <div class="account-head">
-          Receiving Account
+          RECEIVING ACCOUNT
         </div>
 
         <div class="account-body">
 
-          <div class="row">
+          <div class="account-row">
             <span class="label">Bank</span>
             <strong class="value">Example Bank</strong>
           </div>
 
-          <div class="row">
+          <div class="account-row">
             <span class="label">Account No.</span>
             <strong class="value">•••• 7821</strong>
           </div>
 
-          <div class="row">
-            <span class="label">Account Name</span>
+          <div class="account-row">
+            <span class="label">Name</span>
             <strong class="value">Customer Name</strong>
           </div>
 
         </div>
+
       </div>
 
     </div>
 
 
-    <!-- AMOUNT -->
-    <div class="amount-box">
-      <span class="amount-label">Transaction Amount</span>
-      <strong class="amount">$500.00</strong>
+    <!-- PAYMENT -->
+    <div class="payment-title">
+      PAYMENT DETAILS
     </div>
 
+    <div class="payment">
+
+      <div class="payment-row">
+        <span class="label">USD Amount</span>
+        <strong class="amount">$500.00</strong>
+      </div>
+
+      <div class="payment-row">
+        <span class="label">INR Amount</span>
+        <strong class="amount">₹250000</strong>
+      </div>
+
+      <div class="payment-row">
+        <span class="label">GST</span>
+        <strong class="amount">₹3000</strong>
+      </div>
+
+      <div class="payment-row">
+        <span class="label">Exchange Currency Fee</span>
+        <strong class="amount">₹8000</strong>
+      </div>
+
+      <div class="payment-row">
+        <span class="label">Status</span>
+        <span class="payment-status">PENDING</span>
+      </div>
+
+    </div>
 
     <div class="footer">
       Sample interface for demonstration purposes only.
