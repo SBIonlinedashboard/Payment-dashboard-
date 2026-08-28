@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Payment Dashboard - Demo</title>
+<title>Transaction Dashboard - Demo</title>
 
 <style>
 *{
@@ -13,84 +13,89 @@
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
   background:#f1f4f8;
+  font-family:Arial, sans-serif;
   color:#172033;
 }
 
+/* HEADER */
 .header{
   background:#14233d;
-  color:#fff;
-  padding:20px;
+  color:white;
+  padding:24px;
 }
 
 .header h1{
   margin:0;
-  font-size:25px;
+  font-size:26px;
   font-weight:800;
 }
 
 .header p{
-  margin:6px 0 0;
+  margin:7px 0 0;
   font-size:15px;
-  font-weight:600;
+  color:#cbd4e0;
 }
 
+/* DEMO NOTICE */
 .demo{
   text-align:center;
-  background:#ffe8e8;
+  background:#fff0f0;
   color:#a00000;
-  padding:8px;
+  padding:9px;
   font-size:13px;
   font-weight:800;
 }
 
+/* MAIN */
 .container{
+  width:100%;
   max-width:850px;
   margin:auto;
-  padding:18px;
+  padding:22px;
 }
 
+/* CARD */
 .card{
-  background:#fff;
-  border-radius:14px;
-  padding:19px;
-  margin-bottom:14px;
-  box-shadow:0 4px 15px rgba(0,0,0,.07);
+  background:white;
+  border-radius:15px;
+  padding:22px;
+  margin-bottom:17px;
+  box-shadow:0 4px 18px rgba(0,0,0,.07);
 }
 
-.card h2{
-  margin:0 0 13px;
+.card-title{
+  margin:0 0 16px;
   font-size:21px;
   font-weight:900;
 }
 
-/* TRANSACTION DETAILS */
-.transaction-box{
+/* TRANSACTION */
+.transaction{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:14px;
 }
 
-.transaction-item{
+.transaction-box{
   background:#f7f9fc;
-  border:1px solid #e0e5eb;
+  border:1px solid #e2e6eb;
   border-radius:11px;
   padding:15px;
 }
 
-.transaction-label{
+.label{
   display:block;
-  color:#526174;
+  color:#566477;
   font-size:15px;
   font-weight:800;
   margin-bottom:6px;
 }
 
-.transaction-value{
+.value{
   display:block;
-  color:#111827;
-  font-size:21px;
+  color:#101827;
+  font-size:20px;
   font-weight:900;
 }
 
@@ -101,105 +106,123 @@ body{
   gap:15px;
 }
 
-.account-box{
+.account{
   border:1px solid #e0e5eb;
-  border-radius:11px;
-  padding:14px;
+  border-radius:12px;
+  padding:16px;
 }
 
-.account-box h3{
-  margin:0 0 10px;
+.account-title{
+  margin:0 0 12px;
   font-size:18px;
   font-weight:900;
 }
 
-.item{
-  padding:8px 0;
+.account-row{
+  padding:9px 0;
+  border-bottom:1px solid #edf0f3;
 }
 
-.label{
-  display:block;
-  color:#526174;
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:4px;
-}
-
-.value{
-  display:block;
-  color:#111827;
-  font-size:19px;
-  font-weight:900;
+.account-row:last-child{
+  border-bottom:0;
 }
 
 /* PAYMENT */
-.payment-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0 22px;
+.payment-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:13px 0;
+  border-bottom:1px solid #e5e8ed;
+  gap:20px;
 }
 
+.payment-row:last-child{
+  border-bottom:0;
+}
+
+.payment-row .label{
+  margin:0;
+}
+
+.payment-value{
+  font-size:20px;
+  font-weight:900;
+  color:#101827;
+  text-align:right;
+}
+
+/* STATUS */
 .status{
   display:inline-block;
-  padding:7px 12px;
-  border-radius:20px;
   background:#fff4d6;
   color:#805d00;
+  padding:8px 14px;
+  border-radius:20px;
   font-size:14px;
   font-weight:900;
 }
 
+/* MOBILE */
 @media(max-width:600px){
 
   .container{
-    padding:12px;
+    padding:13px;
   }
 
   .card{
-    padding:16px;
+    padding:17px;
+    margin-bottom:13px;
+  }
+
+  .header{
+    padding:20px 17px;
+  }
+
+  .header h1{
+    font-size:23px;
+  }
+
+  .transaction{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
   }
 
   .transaction-box{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+    padding:12px;
   }
 
   .accounts{
     grid-template-columns:1fr 1fr;
-    gap:10px;
+    gap:9px;
   }
 
-  .payment-grid{
-    grid-template-columns:1fr 1fr;
-    gap:0 12px;
-  }
-
-  .transaction-item{
+  .account{
     padding:12px;
   }
 
-  .transaction-label{
-    font-size:13px;
-  }
-
-  .transaction-value{
-    font-size:18px;
-  }
-
-  .account-box{
-    padding:11px;
-  }
-
-  .account-box h3{
-    font-size:15px;
+  .card-title{
+    font-size:19px;
   }
 
   .label{
-    font-size:12px;
+    font-size:13px;
   }
 
   .value{
+    font-size:17px;
+  }
+
+  .account-title{
     font-size:16px;
+  }
+
+  .payment-row{
+    padding:11px 0;
+  }
+
+  .payment-value{
+    font-size:17px;
   }
 }
 </style>
@@ -208,8 +231,8 @@ body{
 <body>
 
 <div class="header">
-  <h1>Payment Record Dashboard</h1>
-  <p>Transaction Information — DEMO</p>
+  <h1>Transaction Dashboard</h1>
+  <p>Payment Information — DEMO</p>
 </div>
 
 <div class="demo">
@@ -218,108 +241,104 @@ body{
 
 <div class="container">
 
-<!-- TRANSACTION DETAILS -->
-<div class="card">
+  <!-- TRANSACTION DETAILS -->
+  <div class="card">
 
-<h2>Transaction Details</h2>
+    <h2 class="card-title">Transaction Details</h2>
 
-<div class="transaction-box">
+    <div class="transaction">
 
-<div class="transaction-item">
-<span class="transaction-label">Date</span>
-<strong class="transaction-value">15 August 2026</strong>
-</div>
+      <div class="transaction-box">
+        <span class="label">Date</span>
+        <strong class="value">15 August 2026</strong>
+      </div>
 
-<div class="transaction-item">
-<span class="transaction-label">Customer Name</span>
-<strong class="transaction-value">Ayesha Ali</strong>
-</div>
+      <div class="transaction-box">
+        <span class="label">Customer Name</span>
+        <strong class="value">Ayesha Ali</strong>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
-
-<!-- ACCOUNT INFORMATION -->
-<div class="card">
-
-<h2>Account Information</h2>
-
-<div class="accounts">
-
-<div class="account-box">
-
-<h3>Sending Account</h3>
-
-<div class="item">
-<span class="label">Bank Name</span>
-<strong class="value">Sample Bank</strong>
-</div>
-
-<div class="item">
-<span class="label">Account No.</span>
-<strong class="value">•••• 4500</strong>
-</div>
-
-</div>
+  </div>
 
 
-<div class="account-box">
+  <!-- ACCOUNT INFORMATION -->
+  <div class="card">
 
-<h3>Receiving Account</h3>
+    <h2 class="card-title">Account Information</h2>
 
-<div class="item">
-<span class="label">Bank Name</span>
-<strong class="value">Example Bank</strong>
-</div>
+    <div class="accounts">
 
-<div class="item">
-<span class="label">Account No.</span>
-<strong class="value">•••• 7821</strong>
-</div>
+      <div class="account">
 
-</div>
+        <h3 class="account-title">Sending Account</h3>
 
-</div>
+        <div class="account-row">
+          <span class="label">Bank Name</span>
+          <strong class="value">Sample Bank</strong>
+        </div>
 
-</div>
+        <div class="account-row">
+          <span class="label">Account No.</span>
+          <strong class="value">•••• 4500</strong>
+        </div>
+
+      </div>
 
 
-<!-- PAYMENT DETAILS -->
-<div class="card">
+      <div class="account">
 
-<h2>Payment Details</h2>
+        <h3 class="account-title">Receiving Account</h3>
 
-<div class="payment-grid">
+        <div class="account-row">
+          <span class="label">Bank Name</span>
+          <strong class="value">Example Bank</strong>
+        </div>
 
-<div class="item">
-<span class="label">USD Amount</span>
-<strong class="value">$500</strong>
-</div>
+        <div class="account-row">
+          <span class="label">Account No.</span>
+          <strong class="value">•••• 7821</strong>
+        </div>
 
-<div class="item">
-<span class="label">INR Amount</span>
-<strong class="value">₹250000</strong>
-</div>
+      </div>
 
-<div class="item">
-<span class="label">GST</span>
-<strong class="value">₹3000</strong>
-</div>
+    </div>
 
-<div class="item">
-<span class="label">Exchange Currency Fee</span>
-<strong class="value">₹8000</strong>
-</div>
+  </div>
 
-<div class="item">
-<span class="label">Status</span>
-<span class="status">Pending Verification</span>
-</div>
 
-</div>
+  <!-- PAYMENT DETAILS -->
+  <div class="card">
 
-</div>
+    <h2 class="card-title">Payment Details</h2>
+
+    <div class="payment-row">
+      <span class="label">USD Amount</span>
+      <strong class="payment-value">$500</strong>
+    </div>
+
+    <div class="payment-row">
+      <span class="label">INR Amount</span>
+      <strong class="payment-value">₹250000</strong>
+    </div>
+
+    <div class="payment-row">
+      <span class="label">GST</span>
+      <strong class="payment-value">₹3000</strong>
+    </div>
+
+    <div class="payment-row">
+      <span class="label">Exchange Currency Fee</span>
+      <strong class="payment-value">₹8000</strong>
+    </div>
+
+    <div class="payment-row">
+      <span class="label">Status</span>
+      <span class="status">Pending Verification</span>
+    </div>
+
+  </div>
 
 </div>
 
