@@ -14,100 +14,121 @@
 html,body{
   margin:0;
   width:100%;
-  height:100%;
+  min-height:100%;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#eef2f6;
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#edf2f7,#dfe7f0);
   color:#172033;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
+  padding:18px;
 }
 
-/* MAIN PAGE */
-.page{
-  width:96%;
+/* MAIN CARD */
+.dashboard{
+  width:100%;
   max-width:900px;
-  max-height:96vh;
+  margin:auto;
   background:#fff;
-  border-radius:16px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
+  box-shadow:0 12px 35px rgba(20,35,61,.15);
 }
 
 /* HEADER */
 .header{
   background:#14233d;
   color:#fff;
-  padding:18px 22px;
+  padding:22px 25px;
+}
+
+.header-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:15px;
 }
 
 .header h1{
   margin:0;
-  font-size:24px;
+  font-size:25px;
   font-weight:900;
 }
 
 .header p{
-  margin:4px 0 0;
+  margin:5px 0 0;
+  color:#cbd5e2;
   font-size:13px;
-  color:#d1d9e4;
   font-weight:600;
 }
 
-.demo{
-  background:#fff0f0;
-  color:#a00000;
-  text-align:center;
-  padding:6px;
+.header-badge{
+  background:#243957;
+  border:1px solid #53657e;
+  border-radius:20px;
+  padding:7px 12px;
   font-size:11px;
   font-weight:800;
+  white-space:nowrap;
+}
+
+/* DEMO */
+.demo{
+  text-align:center;
+  background:#fff3f3;
+  color:#a00000;
+  padding:7px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.3px;
 }
 
 /* CONTENT */
 .content{
-  padding:15px 18px 17px;
+  padding:17px 20px 20px;
 }
 
 /* SECTION */
 .section{
-  margin-bottom:12px;
+  margin-bottom:13px;
+}
+
+.section:last-child{
+  margin-bottom:0;
 }
 
 .section-title{
-  font-size:15px;
-  font-weight:900;
+  display:flex;
+  align-items:center;
+  gap:7px;
   margin-bottom:7px;
-  color:#172033;
+  font-size:13px;
+  font-weight:900;
+  color:#26364d;
+  letter-spacing:.4px;
 }
 
 /* TRANSACTION */
-.transaction{
+.transaction-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:9px;
+  gap:10px;
 }
 
-.box{
-  background:#f6f8fb;
-  border:1px solid #e1e6ec;
-  border-radius:9px;
-  padding:10px 13px;
+.transaction-box{
+  background:#f7f9fc;
+  border:1px solid #e1e6ed;
+  border-radius:11px;
+  padding:11px 14px;
 }
 
 .label{
   display:block;
-  color:#59677a;
-  font-size:11px;
+  color:#667387;
+  font-size:10px;
   font-weight:800;
-  margin-bottom:3px;
   text-transform:uppercase;
+  margin-bottom:4px;
 }
 
 .value{
@@ -117,53 +138,59 @@ body{
   font-weight:900;
 }
 
-/* ACCOUNTS */
-.accounts{
+/* ACCOUNT */
+.account-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:9px;
+  gap:10px;
 }
 
 .account{
-  border:1px solid #dfe5eb;
-  border-radius:9px;
-  padding:11px 13px;
+  border:1px solid #dfe5ec;
+  border-radius:12px;
+  overflow:hidden;
 }
 
-.account-title{
-  font-size:14px;
+.account-head{
+  background:#f4f7fa;
+  padding:9px 13px;
+  border-bottom:1px solid #e1e6ed;
+  font-size:12px;
   font-weight:900;
-  margin-bottom:7px;
 }
 
-.account-line{
+.account-body{
+  padding:8px 13px;
+}
+
+.account-row{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:8px;
-  padding:5px 0;
+  gap:10px;
+  padding:7px 0;
   border-bottom:1px solid #edf0f3;
 }
 
-.account-line:last-child{
+.account-row:last-child{
   border-bottom:0;
 }
 
-.account-line .label{
+.account-row .label{
   margin:0;
   text-transform:none;
-  font-size:11px;
+  font-size:10px;
 }
 
-.account-line .value{
-  font-size:15px;
+.account-row .value{
+  font-size:14px;
   text-align:right;
 }
 
 /* PAYMENT */
 .payment{
-  border:1px solid #dfe5eb;
-  border-radius:9px;
+  border:1px solid #dfe5ec;
+  border-radius:12px;
   overflow:hidden;
 }
 
@@ -182,11 +209,11 @@ body{
 .payment-row .label{
   margin:0;
   text-transform:none;
-  font-size:12px;
+  font-size:11px;
 }
 
 .amount{
-  font-size:16px;
+  font-size:15px;
   font-weight:900;
   color:#101827;
 }
@@ -194,23 +221,33 @@ body{
 .status{
   background:#fff4d6;
   color:#805d00;
+  border-radius:18px;
   padding:5px 10px;
-  border-radius:15px;
-  font-size:11px;
+  font-size:10px;
   font-weight:900;
 }
 
-/* SMALL PHONES */
+/* FOOTER */
+.footer{
+  text-align:center;
+  color:#7b8797;
+  font-size:9px;
+  padding-top:7px;
+}
+
+/* MOBILE */
 @media(max-width:600px){
 
-  .page{
-    width:98%;
-    max-height:98vh;
-    border-radius:12px;
+  body{
+    padding:8px;
+  }
+
+  .dashboard{
+    border-radius:14px;
   }
 
   .header{
-    padding:13px 15px;
+    padding:15px 16px;
   }
 
   .header h1{
@@ -218,58 +255,69 @@ body{
   }
 
   .header p{
-    font-size:11px;
+    font-size:10px;
+  }
+
+  .header-badge{
+    padding:5px 8px;
+    font-size:9px;
   }
 
   .demo{
-    font-size:9px;
+    font-size:8px;
     padding:5px;
   }
 
   .content{
-    padding:10px 11px;
+    padding:12px;
   }
 
   .section{
-    margin-bottom:8px;
+    margin-bottom:9px;
   }
 
   .section-title{
-    font-size:12px;
+    font-size:11px;
     margin-bottom:5px;
   }
 
-  .box{
+  .transaction-grid,
+  .account-grid{
+    gap:7px;
+  }
+
+  .transaction-box{
     padding:8px 9px;
   }
 
   .label{
-    font-size:9px;
+    font-size:8px;
+    margin-bottom:3px;
   }
 
   .value{
     font-size:13px;
   }
 
-  .account{
-    padding:8px 9px;
+  .account-head{
+    padding:7px 8px;
+    font-size:10px;
   }
 
-  .account-title{
+  .account-body{
+    padding:6px 8px;
+  }
+
+  .account-row{
+    padding:5px 0;
+  }
+
+  .account-row .label{
+    font-size:8px;
+  }
+
+  .account-row .value{
     font-size:11px;
-    margin-bottom:5px;
-  }
-
-  .account-line{
-    padding:3px 0;
-  }
-
-  .account-line .label{
-    font-size:9px;
-  }
-
-  .account-line .value{
-    font-size:12px;
   }
 
   .payment-row{
@@ -277,16 +325,20 @@ body{
   }
 
   .payment-row .label{
-    font-size:10px;
+    font-size:9px;
   }
 
   .amount{
-    font-size:13px;
+    font-size:12px;
   }
 
   .status{
-    font-size:9px;
     padding:4px 7px;
+    font-size:8px;
+  }
+
+  .footer{
+    font-size:8px;
   }
 }
 </style>
@@ -294,12 +346,19 @@ body{
 
 <body>
 
-<div class="page">
+<div class="dashboard">
 
+  <!-- HEADER -->
   <div class="header">
-    <div>
-      <h1>Transaction Dashboard</h1>
-      <p>Payment Information — DEMO</p>
+    <div class="header-top">
+      <div>
+        <h1>Transaction Dashboard</h1>
+        <p>Payment Information</p>
+      </div>
+
+      <div class="header-badge">
+        SAMPLE
+      </div>
     </div>
   </div>
 
@@ -316,14 +375,14 @@ body{
         TRANSACTION DETAILS
       </div>
 
-      <div class="transaction">
+      <div class="transaction-grid">
 
-        <div class="box">
+        <div class="transaction-box">
           <span class="label">Date</span>
           <strong class="value">15 August 2026</strong>
         </div>
 
-        <div class="box">
+        <div class="transaction-box">
           <span class="label">Customer Name</span>
           <strong class="value">Ayesha Ali</strong>
         </div>
@@ -339,41 +398,51 @@ body{
         ACCOUNT INFORMATION
       </div>
 
-      <div class="accounts">
+      <div class="account-grid">
 
+        <!-- SENDING -->
         <div class="account">
 
-          <div class="account-title">
+          <div class="account-head">
             SENDING ACCOUNT
           </div>
 
-          <div class="account-line">
-            <span class="label">Bank Name</span>
-            <strong class="value">Sample Bank</strong>
-          </div>
+          <div class="account-body">
 
-          <div class="account-line">
-            <span class="label">Account No.</span>
-            <strong class="value">•••• 4500</strong>
+            <div class="account-row">
+              <span class="label">Bank Name</span>
+              <strong class="value">Sample Bank</strong>
+            </div>
+
+            <div class="account-row">
+              <span class="label">Account No.</span>
+              <strong class="value">•••• 4500</strong>
+            </div>
+
           </div>
 
         </div>
 
 
+        <!-- RECEIVING -->
         <div class="account">
 
-          <div class="account-title">
+          <div class="account-head">
             RECEIVING ACCOUNT
           </div>
 
-          <div class="account-line">
-            <span class="label">Bank Name</span>
-            <strong class="value">Example Bank</strong>
-          </div>
+          <div class="account-body">
 
-          <div class="account-line">
-            <span class="label">Account No.</span>
-            <strong class="value">•••• 7821</strong>
+            <div class="account-row">
+              <span class="label">Bank Name</span>
+              <strong class="value">Example Bank</strong>
+            </div>
+
+            <div class="account-row">
+              <span class="label">Account No.</span>
+              <strong class="value">•••• 7821</strong>
+            </div>
+
           </div>
 
         </div>
@@ -418,6 +487,10 @@ body{
 
       </div>
 
+    </div>
+
+    <div class="footer">
+      Sample interface for demonstration purposes only.
     </div>
 
   </div>
