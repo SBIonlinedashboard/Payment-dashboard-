@@ -7,28 +7,36 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#eef2f7;font-family:Arial;color:#172033}
-.page{max-width:600px;margin:auto;background:white;min-height:100vh}
-header{background:#172a46;color:white;padding:18px}
-h1{margin:0;font-size:21px}
-.sub{font-size:11px;color:#ccd5e1;margin-top:4px}
-.demo{text-align:center;background:#fff1f1;color:#a00000;padding:6px;font-size:9px;font-weight:bold}
-.content{padding:15px}
-.summary{background:#f6f8fb;padding:13px;border-radius:10px;display:flex;justify-content:space-between}
-.name{font-weight:900;font-size:15px}
+.page{max-width:600px;margin:18px auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 5px 22px #0002}
+header{background:#172a46;color:#fff;padding:20px}
+h1{margin:0;font-size:22px}
+.sub{font-size:11px;color:#cbd5e1;margin-top:5px}
+.demo{text-align:center;background:#fff2f2;color:#9b0000;padding:6px;font-size:9px;font-weight:bold}
+.content{padding:16px}
+.summary{background:#f7f9fc;border-radius:12px;padding:14px;display:flex;justify-content:space-between}
+.name{font-size:15px;font-weight:900}
 .date{font-size:10px;color:#778294;margin-top:4px}
-.amount{font-size:19px;font-weight:900}
-.status{color:#806000;font-size:9px;font-weight:bold;margin-top:6px}
-.title{font-size:13px;font-weight:900;margin:12px 0 6px}
-.box{border:1px solid #e0e5eb;border-radius:9px;overflow:hidden}
-.head{background:#f5f7f9;padding:7px 10px;font-size:10px;font-weight:900}
-.row{display:flex;justify-content:space-between;padding:7px 10px;border-bottom:1px solid #edf0f3}
+.amount{font-size:20px;font-weight:900}
+.status{color:#806000;font-size:9px;font-weight:900;margin-top:7px}
+.title{font-size:13px;font-weight:900;margin:12px 0 7px}
+.box{border:1px solid #e0e5eb;border-radius:10px;overflow:hidden;margin-bottom:8px}
+.head{background:#f5f7f9;padding:8px 11px;font-size:10px;font-weight:900}
+.row{display:flex;justify-content:space-between;padding:8px 11px;border-bottom:1px solid #edf0f3;gap:12px}
 .row:last-child{border:0}
-.label{font-size:9px;color:#718094}
-.value{font-size:12px;font-weight:900;text-align:right}
+.label{font-size:10px;color:#536176;font-weight:900}
+.value{font-size:12px;color:#111827;font-weight:700;text-align:right}
+.footer{text-align:center;color:#8a94a3;font-size:8px;padding:5px 0 12px}
+
+@media(max-width:600px){
+.page{margin:0;min-height:100vh;border-radius:0;box-shadow:none}
+.content{padding:13px}
+header{padding:16px}
+}
 </style>
 </head>
 
 <body>
+
 <div class="page">
 
 <header>
@@ -49,25 +57,70 @@ h1{margin:0;font-size:21px}
 <div class="amount">$500.00</div>
 </div>
 
+<div class="title">Transaction Information</div>
+
+<div class="box">
+<div class="row">
+<span class="label">Customer Name</span>
+<strong class="value">Ayesha Ali</strong>
+</div>
+<div class="row">
+<span class="label">Status</span>
+<strong class="value">PENDING</strong>
+</div>
+</div>
+
 <div class="title">Sending Account</div>
+
 <div class="box">
 <div class="head">SAMPLE BANK</div>
-<div class="row"><span class="label">Name</span><b class="value">Ayesha Ali</b></div>
-<div class="row"><span class="label">Account No.</span><b class="value">•••• 4500</b></div>
+<div class="row">
+<span class="label">Account Name</span>
+<strong class="value">Ayesha Ali</strong>
+</div>
+<div class="row">
+<span class="label">Account No.</span>
+<strong class="value">•••• 4500</strong>
+</div>
 </div>
 
 <div class="title">Receiving Account</div>
+
 <div class="box">
 <div class="head">EXAMPLE BANK</div>
-<div class="row"><span class="label">Name</span><b class="value">Customer Name</b></div>
-<div class="row"><span class="label">Account No.</span><b class="value">•••• 7821</b></div>
+<div class="row">
+<span class="label">Account Name</span>
+<strong class="value">Customer Name</strong>
+</div>
+<div class="row">
+<span class="label">Account No.</span>
+<strong class="value">•••• 7821</strong>
+</div>
 </div>
 
 <div class="title">Payment Details</div>
+
 <div class="box">
-<div class="row"><span class="label">USD Amount</span><b class="value">$500.00</b></div>
-<div class="row"><span class="label">INR Amount</span><b class="value">₹250000</b></div>
-<div class="row"><span class="label">GST</span><b class="value">₹3000</b></div>
+<div class="row">
+<span class="label">USD Amount</span>
+<strong class="value">$500.00</strong>
+</div>
+<div class="row">
+<span class="label">INR Amount</span>
+<strong class="value">₹250000</strong>
+</div>
+<div class="row">
+<span class="label">GST</span>
+<strong class="value">₹3000</strong>
+</div>
+<div class="row">
+<span class="label">Exchange Currency Fee</span>
+<strong class="value">₹8000</strong>
+</div>
+</div>
+
+<div class="footer">
+Demo interface for demonstration purposes only.
 </div>
 
 </div>
