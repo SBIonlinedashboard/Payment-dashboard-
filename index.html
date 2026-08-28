@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Record Dashboard</title>
+
 <style>
 *{
   box-sizing:border-box;
@@ -5,14 +13,14 @@
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#f1f4f8;
   color:#172033;
 }
 
 .header{
   background:#14233d;
-  color:white;
+  color:#fff;
   padding:28px 22px;
 }
 
@@ -23,7 +31,7 @@ body{
 }
 
 .header p{
-  margin:9px 0 0;
+  margin:8px 0 0;
   color:#d5dce7;
   font-size:17px;
   font-weight:600;
@@ -56,6 +64,7 @@ body{
   margin:0 0 10px;
   font-size:24px;
   font-weight:800;
+  color:#172033;
 }
 
 .row{
@@ -71,12 +80,14 @@ body{
   border-bottom:none;
 }
 
+/* LEFT SIDE TEXT */
 .label{
   color:#4f5d70;
   font-size:18px;
   font-weight:800;
 }
 
+/* RIGHT SIDE TEXT */
 .value{
   color:#111827;
   font-size:21px;
@@ -99,6 +110,7 @@ body{
   font-weight:800;
 }
 
+/* MOBILE */
 @media(max-width:600px){
 
   .container{
@@ -139,4 +151,110 @@ body{
   }
 }
 </style>
+</head>
 
+<body>
+
+<div class="header">
+  <h1>Payment Record Dashboard</h1>
+  <p>Transaction Information — DEMO</p>
+</div>
+
+<div class="demo">
+  DEMO / SAMPLE — NOT AN OFFICIAL BANK DOCUMENT
+</div>
+
+<div class="container">
+
+<!-- TRANSACTION DETAILS -->
+<div class="card">
+
+<h2>Transaction Details</h2>
+
+<div class="row">
+  <span class="label">Date</span>
+  <strong class="value big-value">15 August 2026</strong>
+</div>
+
+<div class="row">
+  <span class="label">Customer Name</span>
+  <strong class="value big-value">Ayesha Ali</strong>
+</div>
+
+</div>
+
+
+<!-- SENDING ACCOUNT -->
+<div class="card">
+
+<h2>Sending Account</h2>
+
+<div class="row">
+  <span class="label">Sending Bank</span>
+  <strong class="value">Sample Bank</strong>
+</div>
+
+<div class="row">
+  <span class="label">Sending Account No.</span>
+  <strong class="value big-value">•••• 4500</strong>
+</div>
+
+</div>
+
+
+<!-- RECEIVING ACCOUNT -->
+<div class="card">
+
+<h2>Receiving Account</h2>
+
+<div class="row">
+  <span class="label">Receiving Bank</span>
+  <strong class="value">Example Bank</strong>
+</div>
+
+<div class="row">
+  <span class="label">Receiving Account No.</span>
+  <strong class="value big-value">•••• 7821</strong>
+</div>
+
+</div>
+
+
+<!-- PAYMENT DETAILS -->
+<div class="card">
+
+<h2>Payment Details</h2>
+
+<div class="row">
+  <span class="label">USD Amount</span>
+  <strong class="value big-value">$500</strong>
+</div>
+
+<div class="row">
+  <span class="label">INR Amount</span>
+  <strong class="value big-value">₹250000</strong>
+</div>
+
+<div class="row">
+  <span class="label">GST</span>
+  <strong class="value">₹3000</strong>
+</div>
+
+<div class="row">
+  <span class="label">Exchange Currency Fee</span>
+  <strong class="value">₹8000</strong>
+</div>
+
+<div class="row">
+  <span class="label">Status</span>
+  <strong>
+    <span class="status">Pending Verification</span>
+  </strong>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
