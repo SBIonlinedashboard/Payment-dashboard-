@@ -4,341 +4,223 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transaction Dashboard - Demo</title>
+<title>Transaction Details - Demo</title>
 
 <style>
 *{
   box-sizing:border-box;
 }
 
-html,body{
-  margin:0;
-  width:100%;
-  min-height:100%;
-}
-
 body{
+  margin:0;
+  background:#f4f6f9;
   font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(135deg,#edf2f7,#dfe7f0);
   color:#172033;
-  padding:18px;
 }
 
-/* MAIN CARD */
-.dashboard{
+.page{
   width:100%;
-  max-width:900px;
-  margin:auto;
+  max-width:650px;
+  margin:25px auto;
   background:#fff;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 12px 35px rgba(20,35,61,.15);
+  min-height:calc(100vh - 50px);
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
 }
 
 /* HEADER */
 .header{
   background:#14233d;
   color:#fff;
-  padding:22px 25px;
-}
-
-.header-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
+  padding:20px;
 }
 
 .header h1{
   margin:0;
-  font-size:25px;
-  font-weight:900;
+  font-size:22px;
+  font-weight:800;
 }
 
 .header p{
   margin:5px 0 0;
-  color:#cbd5e2;
+  color:#cbd5e1;
   font-size:13px;
-  font-weight:600;
-}
-
-.header-badge{
-  background:#243957;
-  border:1px solid #53657e;
-  border-radius:20px;
-  padding:7px 12px;
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
 }
 
 /* DEMO */
 .demo{
   text-align:center;
-  background:#fff3f3;
+  background:#fff1f1;
   color:#a00000;
   padding:7px;
   font-size:10px;
-  font-weight:900;
-  letter-spacing:.3px;
+  font-weight:800;
 }
 
 /* CONTENT */
 .content{
-  padding:17px 20px 20px;
+  padding:20px;
 }
 
-/* SECTION */
-.section{
-  margin-bottom:13px;
-}
-
-.section:last-child{
-  margin-bottom:0;
-}
-
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  margin-bottom:7px;
-  font-size:13px;
+.title{
+  font-size:19px;
   font-weight:900;
-  color:#26364d;
-  letter-spacing:.4px;
+  margin-bottom:15px;
 }
 
-/* TRANSACTION */
-.transaction-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+/* STATUS */
+.status-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff9e8;
+  border:1px solid #f0dfaa;
+  padding:13px 15px;
+  border-radius:9px;
+  margin-bottom:17px;
 }
 
-.transaction-box{
-  background:#f7f9fc;
-  border:1px solid #e1e6ed;
-  border-radius:11px;
-  padding:11px 14px;
+.status-label{
+  font-size:13px;
+  font-weight:700;
+  color:#6d6244;
+}
+
+.pending{
+  color:#805d00;
+  font-size:14px;
+  font-weight:900;
+}
+
+/* ROW */
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:13px 0;
+  border-bottom:1px solid #e8ebef;
+}
+
+.row:last-child{
+  border-bottom:none;
 }
 
 .label{
-  display:block;
-  color:#667387;
-  font-size:10px;
-  font-weight:800;
-  text-transform:uppercase;
-  margin-bottom:4px;
+  color:#687386;
+  font-size:13px;
+  font-weight:700;
 }
 
 .value{
-  display:block;
-  color:#101827;
-  font-size:16px;
+  color:#111827;
+  font-size:15px;
   font-weight:900;
+  text-align:right;
 }
 
-/* ACCOUNT */
-.account-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+/* ACCOUNT SECTION */
+.account-section{
+  margin-top:18px;
 }
 
-.account{
-  border:1px solid #dfe5ec;
-  border-radius:12px;
+.account-title{
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:8px;
+  color:#26364d;
+}
+
+.account-box{
+  border:1px solid #e1e5ea;
+  border-radius:9px;
+  margin-bottom:10px;
   overflow:hidden;
 }
 
 .account-head{
-  background:#f4f7fa;
+  background:#f7f8fa;
   padding:9px 13px;
-  border-bottom:1px solid #e1e6ed;
   font-size:12px;
   font-weight:900;
 }
 
 .account-body{
-  padding:8px 13px;
+  padding:0 13px;
 }
 
-.account-row{
+/* AMOUNT */
+.amount-box{
+  margin-top:18px;
+  padding:17px;
+  border-top:1px solid #e1e5ea;
+  border-bottom:1px solid #e1e5ea;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:10px;
-  padding:7px 0;
-  border-bottom:1px solid #edf0f3;
 }
 
-.account-row:last-child{
-  border-bottom:0;
-}
-
-.account-row .label{
-  margin:0;
-  text-transform:none;
-  font-size:10px;
-}
-
-.account-row .value{
-  font-size:14px;
-  text-align:right;
-}
-
-/* PAYMENT */
-.payment{
-  border:1px solid #dfe5ec;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.payment-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:8px 13px;
-  border-bottom:1px solid #edf0f3;
-}
-
-.payment-row:last-child{
-  border-bottom:0;
-}
-
-.payment-row .label{
-  margin:0;
-  text-transform:none;
-  font-size:11px;
+.amount-label{
+  font-size:13px;
+  color:#687386;
+  font-weight:700;
 }
 
 .amount{
-  font-size:15px;
+  font-size:24px;
   font-weight:900;
-  color:#101827;
-}
-
-.status{
-  background:#fff4d6;
-  color:#805d00;
-  border-radius:18px;
-  padding:5px 10px;
-  font-size:10px;
-  font-weight:900;
+  color:#111827;
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
-  color:#7b8797;
-  font-size:9px;
-  padding-top:7px;
+  color:#8993a1;
+  font-size:10px;
+  padding:15px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
 
   body{
-    padding:8px;
+    background:#fff;
   }
 
-  .dashboard{
-    border-radius:14px;
+  .page{
+    margin:0;
+    min-height:100vh;
+    box-shadow:none;
   }
 
   .header{
-    padding:15px 16px;
+    padding:18px 16px;
   }
 
   .header h1{
-    font-size:19px;
-  }
-
-  .header p{
-    font-size:10px;
-  }
-
-  .header-badge{
-    padding:5px 8px;
-    font-size:9px;
-  }
-
-  .demo{
-    font-size:8px;
-    padding:5px;
+    font-size:20px;
   }
 
   .content{
-    padding:12px;
+    padding:17px 15px;
   }
 
-  .section{
-    margin-bottom:9px;
+  .title{
+    font-size:18px;
   }
 
-  .section-title{
-    font-size:11px;
-    margin-bottom:5px;
-  }
-
-  .transaction-grid,
-  .account-grid{
-    gap:7px;
-  }
-
-  .transaction-box{
-    padding:8px 9px;
+  .row{
+    padding:12px 0;
   }
 
   .label{
-    font-size:8px;
-    margin-bottom:3px;
-  }
-
-  .value{
-    font-size:13px;
-  }
-
-  .account-head{
-    padding:7px 8px;
-    font-size:10px;
-  }
-
-  .account-body{
-    padding:6px 8px;
-  }
-
-  .account-row{
-    padding:5px 0;
-  }
-
-  .account-row .label{
-    font-size:8px;
-  }
-
-  .account-row .value{
-    font-size:11px;
-  }
-
-  .payment-row{
-    padding:6px 9px;
-  }
-
-  .payment-row .label{
-    font-size:9px;
-  }
-
-  .amount{
     font-size:12px;
   }
 
-  .status{
-    padding:4px 7px;
-    font-size:8px;
+  .value{
+    font-size:14px;
   }
 
-  .footer{
-    font-size:8px;
+  .amount{
+    font-size:22px;
   }
 }
 </style>
@@ -346,148 +228,118 @@ body{
 
 <body>
 
-<div class="dashboard">
+<div class="page">
 
-  <!-- HEADER -->
   <div class="header">
-    <div class="header-top">
-      <div>
-        <h1>Transaction Dashboard</h1>
-        <p>Payment Information</p>
-      </div>
-
-      <div class="header-badge">
-        SAMPLE
-      </div>
-    </div>
+    <h1>Transaction Details</h1>
+    <p>Payment Record — Demo</p>
   </div>
 
   <div class="demo">
-    DEMO / SAMPLE — NOT AN OFFICIAL BANK DOCUMENT
+    DEMO / SAMPLE — NOT AN OFFICIAL BANK RECORD
   </div>
 
   <div class="content">
 
-    <!-- TRANSACTION DETAILS -->
-    <div class="section">
+    <div class="title">
+      Transaction Information
+    </div>
 
-      <div class="section-title">
-        TRANSACTION DETAILS
+    <!-- STATUS -->
+    <div class="status-box">
+      <span class="status-label">Transaction Status</span>
+      <span class="pending">PENDING</span>
+    </div>
+
+    <!-- DATE -->
+    <div class="row">
+      <span class="label">Date</span>
+      <strong class="value">15 August 2026</strong>
+    </div>
+
+    <div class="row">
+      <span class="label">Time</span>
+      <strong class="value">03:45 PM</strong>
+    </div>
+
+    <!-- SENDING -->
+    <div class="account-section">
+
+      <div class="account-title">
+        SENDING DETAILS
       </div>
 
-      <div class="transaction-grid">
+      <div class="account-box">
 
-        <div class="transaction-box">
-          <span class="label">Date</span>
-          <strong class="value">15 August 2026</strong>
+        <div class="account-head">
+          Sending Account
         </div>
 
-        <div class="transaction-box">
-          <span class="label">Customer Name</span>
-          <strong class="value">Ayesha Ali</strong>
-        </div>
+        <div class="account-body">
 
+          <div class="row">
+            <span class="label">Bank</span>
+            <strong class="value">Sample Bank</strong>
+          </div>
+
+          <div class="row">
+            <span class="label">Account No.</span>
+            <strong class="value">•••• 4500</strong>
+          </div>
+
+          <div class="row">
+            <span class="label">Account Name</span>
+            <strong class="value">Ayesha Ali</strong>
+          </div>
+
+        </div>
       </div>
+
     </div>
 
 
-    <!-- ACCOUNT INFORMATION -->
-    <div class="section">
+    <!-- RECEIVING -->
+    <div class="account-section">
 
-      <div class="section-title">
-        ACCOUNT INFORMATION
+      <div class="account-title">
+        RECEIVING DETAILS
       </div>
 
-      <div class="account-grid">
+      <div class="account-box">
 
-        <!-- SENDING -->
-        <div class="account">
-
-          <div class="account-head">
-            SENDING ACCOUNT
-          </div>
-
-          <div class="account-body">
-
-            <div class="account-row">
-              <span class="label">Bank Name</span>
-              <strong class="value">Sample Bank</strong>
-            </div>
-
-            <div class="account-row">
-              <span class="label">Account No.</span>
-              <strong class="value">•••• 4500</strong>
-            </div>
-
-          </div>
-
+        <div class="account-head">
+          Receiving Account
         </div>
 
+        <div class="account-body">
 
-        <!-- RECEIVING -->
-        <div class="account">
-
-          <div class="account-head">
-            RECEIVING ACCOUNT
+          <div class="row">
+            <span class="label">Bank</span>
+            <strong class="value">Example Bank</strong>
           </div>
 
-          <div class="account-body">
+          <div class="row">
+            <span class="label">Account No.</span>
+            <strong class="value">•••• 7821</strong>
+          </div>
 
-            <div class="account-row">
-              <span class="label">Bank Name</span>
-              <strong class="value">Example Bank</strong>
-            </div>
-
-            <div class="account-row">
-              <span class="label">Account No.</span>
-              <strong class="value">•••• 7821</strong>
-            </div>
-
+          <div class="row">
+            <span class="label">Account Name</span>
+            <strong class="value">Customer Name</strong>
           </div>
 
         </div>
-
-      </div>
-    </div>
-
-
-    <!-- PAYMENT DETAILS -->
-    <div class="section">
-
-      <div class="section-title">
-        PAYMENT DETAILS
-      </div>
-
-      <div class="payment">
-
-        <div class="payment-row">
-          <span class="label">USD Amount</span>
-          <strong class="amount">$500</strong>
-        </div>
-
-        <div class="payment-row">
-          <span class="label">INR Amount</span>
-          <strong class="amount">₹250000</strong>
-        </div>
-
-        <div class="payment-row">
-          <span class="label">GST</span>
-          <strong class="amount">₹3000</strong>
-        </div>
-
-        <div class="payment-row">
-          <span class="label">Exchange Currency Fee</span>
-          <strong class="amount">₹8000</strong>
-        </div>
-
-        <div class="payment-row">
-          <span class="label">Status</span>
-          <span class="status">PENDING VERIFICATION</span>
-        </div>
-
       </div>
 
     </div>
+
+
+    <!-- AMOUNT -->
+    <div class="amount-box">
+      <span class="amount-label">Transaction Amount</span>
+      <strong class="amount">$500.00</strong>
+    </div>
+
 
     <div class="footer">
       Sample interface for demonstration purposes only.
